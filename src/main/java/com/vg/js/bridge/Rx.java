@@ -21,6 +21,9 @@ public class Rx {
 
         public native static <T> Observer<T> create(Callback1<T> handler);
 
+        public native static <T> Observer<T> create(Callback1<T> onNext, Callback1<Object> onError,
+                Callback0 onCompleted);
+
         public native void onNext(T item);
 
         public native void onCompleted();
