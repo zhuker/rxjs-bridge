@@ -6,10 +6,14 @@ import org.stjs.javascript.annotation.Template;
 import org.stjs.javascript.dom.DOMEvent;
 import org.stjs.javascript.functions.Callback0;
 import org.stjs.javascript.functions.Callback1;
+import org.stjs.javascript.functions.Callback4;
 import org.stjs.javascript.functions.Function0;
 import org.stjs.javascript.functions.Function1;
 import org.stjs.javascript.functions.Function2;
 import org.stjs.javascript.functions.Function3;
+import org.stjs.javascript.functions.Function4;
+
+import com.vg.js.bridge.Rx.Observable;
 
 @STJSBridge
 public class Rx {
@@ -75,6 +79,8 @@ public class Rx {
 
         public native Disposable subscribe(Callback1<T> onNext, Callback1<?> onError, Callback0 onCompleted);
 
+        public native Disposable subscribe(Observer<T> onbserver);
+
         public native Observable<T> debounce(int i);
 
         public native Observable<T> filter(Function1<T, Boolean> predicate);
@@ -132,6 +138,10 @@ public class Rx {
         public native Observable<T> takeWhile(Function1<T, Boolean> predicate);
 
         public native static <T> Observable<T> start(Function0<T> func);
+
+        public native <U> Observable<U> reduce(Function4<U, Object, Integer, Observable<T>, U> accumulator, U seed);
+
+        public native Observable<T> timeout(long msec);
     }
 
     public static class Subject<T> extends Observable<T> {
