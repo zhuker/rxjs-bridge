@@ -6,7 +6,6 @@ import org.stjs.javascript.annotation.Template;
 import org.stjs.javascript.dom.DOMEvent;
 import org.stjs.javascript.functions.Callback0;
 import org.stjs.javascript.functions.Callback1;
-import org.stjs.javascript.functions.Callback4;
 import org.stjs.javascript.functions.Function0;
 import org.stjs.javascript.functions.Function1;
 import org.stjs.javascript.functions.Function2;
@@ -139,9 +138,33 @@ public class Rx {
 
         public native static <T> Observable<T> start(Function0<T> func);
 
-        public native <U> Observable<U> reduce(Function4<U, Object, Integer, Observable<T>, U> accumulator, U seed);
+        /**
+         * accumulator (Function): An accumulator function to be invoked on each
+         * element with the following arguments:
+         * 
+         * acc: Any - the accumulated value.
+         * 
+         * currentValue: Any - the current value
+         * 
+         * index: Number - the current index
+         * 
+         * source: Observable - the current observable instance
+         * 
+         * [seed] (Any): The initial accumulator value.
+         * 
+         * @param accumulator
+         * @param seed
+         * @return
+         */
+        public native <U> Observable<U> reduce(Function4<U, T, Integer, Observable<T>, U> accumulator, U seed);
 
         public native Observable<T> timeout(long msec);
+
+        public native Observable<T> takeLast(int count);
+
+        public native Observable<T> max();
+
+        public native <U> Observable<U> scan(Function4<U, U, Integer, Observable<Integer>, U> accumulator, U seed);
     }
 
     public static class Subject<T> extends Observable<T> {
