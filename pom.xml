@@ -16,6 +16,12 @@
 			<url>file://${user.home}/Dropbox/m2/repository</url>
 		</repository>
 	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>DropboxM2 Corporate</id>
+			<url>file://${user.home}/Dropbox/m2/repository</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
