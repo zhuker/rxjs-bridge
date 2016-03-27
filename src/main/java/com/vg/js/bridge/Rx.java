@@ -12,8 +12,6 @@ import org.stjs.javascript.functions.Function2;
 import org.stjs.javascript.functions.Function3;
 import org.stjs.javascript.functions.Function4;
 
-import com.vg.js.bridge.Rx.Observable;
-
 @STJSBridge
 public class Rx {
     public static class Disposable {
@@ -130,7 +128,7 @@ public class Rx {
         public native static Observable<Integer> range(int start, int count);
 
         @Template("prefix")
-        public native static Observable<?> $throw(Object errorNotification);
+        public native static <T> Observable<T> $throw(Object errorNotification);
 
         public native Observable<T> throttle(long msec);
 
@@ -164,7 +162,13 @@ public class Rx {
 
         public native Observable<T> max();
 
-        public native <U> Observable<U> scan(Function4<U, U, Integer, Observable<Integer>, U> accumulator, U seed);
+        public native Observable<T> scan(Function4<T, T, Integer, Observable<T>, T> accumulator);
+
+        public native <U> Observable<U> scan(Function4<U, T, Integer, Observable<T>, U> accumulator, U seed);
+
+        public native Observable<Array<T>> bufferWithCount(int count, int skip);
+
+        public native Observable<T> skipLast(int count);
     }
 
     public static class Subject<T> extends Observable<T> {
