@@ -46,6 +46,8 @@ public class Rx {
 
     public static class Observable<T> {
 
+        public native static <T> Observable<T> from(T[] array);
+
         public native static <T> Observable<T> from(Array<T> array);
 
         public native static <T> Observable<T> fromEvent(Object video, String eventName, Function1<DOMEvent, T> object);
@@ -101,6 +103,8 @@ public class Rx {
 
         public native Observable<T> distinct();
 
+        public native <K> Observable<T> distinct(Function1<T, K> keySelector);
+
         public native <K> Observable<T> distinct(Function1<T, K> keySelector, Function2<K, K, Boolean> comparer);
 
         public native Observable<T> distinctUntilChanged();
@@ -154,7 +158,10 @@ public class Rx {
          * @param seed
          * @return
          */
+
         public native <U> Observable<U> reduce(Function4<U, T, Integer, Observable<T>, U> accumulator, U seed);
+
+        public native <U> Observable<U> reduce(Function2<U, T, U> accumulator, U seed);
 
         public native Observable<T> timeout(long msec);
 
@@ -162,13 +169,31 @@ public class Rx {
 
         public native Observable<T> max();
 
+        public native Observable<T> scan(Function2<T, T, T> accumulator);
+
         public native Observable<T> scan(Function4<T, T, Integer, Observable<T>, T> accumulator);
+
+        public native <U> Observable<U> scan(Function2<U, T, U> accumulator, U seed);
 
         public native <U> Observable<U> scan(Function4<U, T, Integer, Observable<T>, U> accumulator, U seed);
 
         public native Observable<Array<T>> bufferWithCount(int count, int skip);
 
         public native Observable<T> skipLast(int count);
+
+        public native <U> Observable<U> concatMap(Function1<T, Observable<U>> func);
+
+        public native Observable<T> skipWhile(Function1<T, Boolean> predicate);
+
+        public native <K> Observable<GroupedObservable<K, T>> groupBy(Function1<T, K> keySelector);
+
+        public native Disposable subscribe();
+    }
+
+    public static class GroupedObservable<K, V> extends Observable<V> {
+
+        public K key;
+
     }
 
     public static class Subject<T> extends Observable<T> {
