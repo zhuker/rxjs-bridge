@@ -163,6 +163,8 @@ public class Rx {
 
         public native <U> Observable<U> reduce(Function2<U, T, U> accumulator, U seed);
 
+        public native Observable<Array<T>> toArray();
+
         public native Observable<T> timeout(long msec);
 
         public native Observable<T> takeLast(int count);
