@@ -12,13 +12,17 @@
 
 	<repositories>
 		<repository>
-			<id>DropboxM2 Corporate</id>
-			<url>file://${user.home}/Dropbox/m2/repository</url>
+			<id>vg-corporate-repo</id>
+			<url>http://kote.videogorillas.com/m2repo/</url>
+		</repository>
+		<repository>
+			<id>vg-google-drive</id>
+			<url>file://${user.home}/Google Drive/Dropbox/m2/repository</url>
 		</repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
-			<id>DropboxM2 Corporate</id>
+			<id>Kote Corporate</id>
 			<url>file://${user.home}/Dropbox/m2/repository</url>
 		</repository>
 	</distributionManagement>
