@@ -70,6 +70,8 @@ public class Rx {
 
         public native Observable<T> merge(Observable<T> other);
 
+        public native Observable<T> concat(Observable<T> other);
+        
         public native Observable<T> concat(Observable<T>... others);
 
         public native Disposable subscribe(Callback1<T> onNext);
