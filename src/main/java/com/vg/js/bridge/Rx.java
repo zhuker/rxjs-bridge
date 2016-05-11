@@ -88,6 +88,11 @@ public class Rx {
 
         public native <R> Observable<R> flatMap(Function1<? super T, ? extends Observable<? extends R>> func);
 
+        public native <R, RE> Observable<R> flatMapObserver(
+                Function2<? super T, Integer, ? extends Observable<? extends R>> next,
+                Function1<? super RE, ? extends Observable<? extends R>> error,
+                Function0<? extends Observable<? extends R>> complete);
+
         public native <E> Observable<T> takeUntil(Observable<? extends E> other);
 
         public native Observable<T> take(int count);
@@ -182,6 +187,8 @@ public class Rx {
         public native <U> Observable<U> scan(Function4<U, T, Integer, Observable<T>, U> accumulator, U seed);
 
         public native Observable<Array<T>> bufferWithCount(int count, int skip);
+
+        public native Observable<T> skip(int count);
 
         public native Observable<T> skipLast(int count);
 
