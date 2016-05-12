@@ -18,6 +18,21 @@ public class Rx {
         public native void dispose();
     }
 
+    public static class CompositeDisposable extends Disposable {
+        public CompositeDisposable(Disposable... items) {
+        }
+
+        public boolean isDisposed;
+
+        public int length;
+
+        public native void add(Disposable item);
+
+        public native boolean remove(Disposable item);
+
+        public native Array<Disposable> toArray();
+    }
+
     public static class Observer<T> {
 
         public native static <T> Observer<T> create(Callback1<T> handler);
