@@ -214,6 +214,12 @@ public class Rx {
         public native <K> Observable<GroupedObservable<K, T>> groupBy(Function1<T, K> keySelector);
 
         public native Disposable subscribe();
+
+        public native Observable<T> pausable(Observable<Boolean> pauser);
+
+        public native Observable<T> pausableBuffered(Observable<Boolean> pauser);
+
+        public native Observable<T> share();
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
