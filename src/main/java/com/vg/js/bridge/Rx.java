@@ -220,6 +220,8 @@ public class Rx {
         public native Observable<T> pausableBuffered(Observable<Boolean> pauser);
 
         public native Observable<T> share();
+
+        public native Observable<T> shareReplay();
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
