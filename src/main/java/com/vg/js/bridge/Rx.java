@@ -203,6 +203,10 @@ public class Rx {
 
         public native Observable<Array<T>> bufferWithCount(int count, int skip);
 
+        public native Observable<Array<T>> bufferWithTime(int timeSpan);
+
+        public native Observable<Array<T>> bufferWithTime(int timeSpan, int timeShift);
+
         public native Observable<T> skip(int count);
 
         public native Observable<T> skipLast(int count);
