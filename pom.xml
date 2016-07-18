@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vg</groupId>
 	<artifactId>rxjs-bridge</artifactId>
-	<version>0.0.9</version>
+	<version>0.0.10</version>
 	<description>RxJS bridge for STJS</description>
 	<properties>
 		<stjs.version>3.3.0</stjs.version>
@@ -20,12 +20,6 @@
 			<url>file://${user.home}/Google Drive/Dropbox/m2/repository</url>
 		</repository>
 	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>Kote Corporate</id>
-			<url>file://${user.home}/Dropbox/m2/repository</url>
-		</repository>
-	</distributionManagement>
 
 	<build>
 		<plugins>

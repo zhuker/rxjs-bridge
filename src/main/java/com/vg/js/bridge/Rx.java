@@ -97,6 +97,8 @@ public class Rx {
 
         public native Disposable subscribe(Observer<T> onbserver);
 
+        public native Disposable subscribe(Observable<T> observable);
+
         public native Observable<T> debounce(int i);
 
         public native Observable<T> filter(Function1<T, Boolean> predicate);
