@@ -86,7 +86,7 @@ public class Rx {
         public native Observable<T> merge(Observable<T> other);
 
         public native Observable<T> concat(Observable<T> other);
-        
+
         public native Observable<T> concat(Observable<T>... others);
 
         public native Disposable subscribe(Callback1<T> onNext);
@@ -167,17 +167,17 @@ public class Rx {
         /**
          * accumulator (Function): An accumulator function to be invoked on each
          * element with the following arguments:
-         * 
+         *
          * acc: Any - the accumulated value.
-         * 
+         *
          * currentValue: Any - the current value
-         * 
+         *
          * index: Number - the current index
-         * 
+         *
          * source: Observable - the current observable instance
-         * 
+         *
          * [seed] (Any): The initial accumulator value.
-         * 
+         *
          * @param accumulator
          * @param seed
          * @return
@@ -242,6 +242,13 @@ public class Rx {
         public native static <T> Subject<T> create(Observer<T> observer, Observable<T> observable);
 
         public native void onCompleted();
+
+        public native void onError();
+
+    }
+
+    public static class BehaviorSubject<T> extends Subject<T> {
+        public native T getValue();
 
     }
 }

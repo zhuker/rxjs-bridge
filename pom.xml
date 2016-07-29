@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vg</groupId>
 	<artifactId>rxjs-bridge</artifactId>
-	<version>0.0.10</version>
+	<version>0.0.13</version>
 	<description>RxJS bridge for STJS</description>
 	<properties>
 		<stjs.version>3.3.0</stjs.version>
@@ -110,7 +110,7 @@
 		<dependency>
 			<groupId>org.st-js.bridge</groupId>
 			<artifactId>html</artifactId>
-			<version>5.0.bv10-30</version>
+			<version>5.0.bv18-47</version>
 		</dependency>
 	</dependencies>
 </project>
