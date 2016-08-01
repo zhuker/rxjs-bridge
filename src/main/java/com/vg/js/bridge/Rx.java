@@ -1,6 +1,7 @@
 package com.vg.js.bridge;
 
 import org.stjs.javascript.Array;
+import org.stjs.javascript.annotation.Native;
 import org.stjs.javascript.annotation.STJSBridge;
 import org.stjs.javascript.annotation.Template;
 import org.stjs.javascript.dom.DOMEvent;
@@ -248,6 +249,11 @@ public class Rx {
     }
 
     public static class BehaviorSubject<T> extends Subject<T> {
+        @Native
+        public BehaviorSubject(T initialValue) {
+
+        }
+
         public native T getValue();
 
     }
