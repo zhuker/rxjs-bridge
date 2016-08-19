@@ -144,6 +144,14 @@ public class Rx {
         @Template("prefix")
         public native Observable<T> $catch(Observable<T> second);
 
+        public native Observable<T> repeat();
+
+        public native Observable<T> repeat(int count);
+
+        public native Observable<T> repeatWhen(Function1<Observable<?>, Observable<?>> notifier);
+        
+        public native Observable<T> retry();
+        
         public native Observable<T> retry(int count);
 
         public native Observable<T> retryWhen(Function1<Observable<?>, Observable<?>> notifier);
