@@ -1,6 +1,7 @@
 package com.vg.js.bridge;
 
 import org.stjs.javascript.Array;
+import org.stjs.javascript.Promise;
 import org.stjs.javascript.annotation.Native;
 import org.stjs.javascript.annotation.STJSBridge;
 import org.stjs.javascript.annotation.Template;
@@ -69,6 +70,8 @@ public class Rx {
         public native static <T> Observable<T> fromEvent(Object video, String eventName, Function1<DOMEvent, T> object);
 
         public native static Observable<DOMEvent> fromEvent(Object video, String string);
+        
+        public native static <T> Observable<T> fromPromise(Promise<T> promise);
 
         @SafeVarargs
         public native static <T> Observable<T> merge(Observable<? extends T>... observables);
