@@ -240,6 +240,8 @@ public class Rx {
         public native Observable<T> share();
 
         public native Observable<T> shareReplay();
+
+        public native <O, R> Observable<R> zip(Observable<O> other, Function2<T, O, R> resultSelector);
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
