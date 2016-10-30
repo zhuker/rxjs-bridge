@@ -242,6 +242,10 @@ public class Rx {
         public native Observable<T> shareReplay();
 
         public native <O, R> Observable<R> zip(Observable<O> other, Function2<T, O, R> resultSelector);
+        
+        public native <T> Observable<T> defaultIfEmpty(T defaultValue);
+        
+        public native Observable<Boolean> isEmpty();
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
