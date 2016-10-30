@@ -243,11 +243,13 @@ public class Rx {
 
         public native <O, R> Observable<R> zip(Observable<O> other, Function2<T, O, R> resultSelector);
         
-        public native <T> Observable<T> defaultIfEmpty(T defaultValue);
+        public native Observable<T> defaultIfEmpty(T defaultValue);
         
         public native Observable<Boolean> isEmpty();
         
         public native Promise<T> toPromise();
+        
+        public native Observable<T> ignoreElements();
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
