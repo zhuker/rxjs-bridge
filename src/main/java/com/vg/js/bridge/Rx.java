@@ -246,6 +246,8 @@ public class Rx {
         public native <T> Observable<T> defaultIfEmpty(T defaultValue);
         
         public native Observable<Boolean> isEmpty();
+        
+        public native Promise<T> toPromise();
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
