@@ -166,6 +166,8 @@ public class Rx {
         public native static Observable<Integer> interval(long l);
 
         public native static Observable<Long> timer(long msec);
+        
+        public native static Observable<Long> timer(int dueMsec, int periodMsec);
 
         public native static Observable<Integer> range(int start, int count);
 
@@ -244,10 +246,17 @@ public class Rx {
         public native Observable<T> shareReplay();
 
         public native <O, R> Observable<R> zip(Observable<O> other, Function2<T, O, R> resultSelector);
+        
+        public native Observable<T> defaultIfEmpty(T defaultValue);
+        
+        public native Observable<Boolean> isEmpty();
+        
+        public native Promise<T> toPromise();
+        
+        public native Observable<T> ignoreElements();
 
         public native Observable<T> let(Function1<Observable<T>, Observable<T>> foo);
 
-        public native static <T> Observable<T> timer(int dueMsec, int periodMsec);
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
