@@ -17,6 +17,12 @@ import org.stjs.javascript.functions.Function4;
 @STJSBridge
 public class Rx {
     public static class Disposable {
+        public static Disposable empty;
+
+        public static native Disposable create(Callback0 action);
+
+        public static native boolean isDisposable(Disposable d);
+
         public native void dispose();
     }
 
