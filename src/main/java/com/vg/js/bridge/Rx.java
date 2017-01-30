@@ -85,6 +85,8 @@ public class Rx {
         public native static <T> Observable<T> concat(Array<Observable<T>> map);
 
         public native static <T> Observable<T> create(Callback1<Observer<T>> observer);
+        
+        public native static <T> Observable<T> create(Function1<Observer<T>, Disposable> observer);
 
         @Template("prefix")
         public native static <T> Observable<T> $create(Function1<Observer<T>, Callback0> object);
@@ -100,6 +102,10 @@ public class Rx {
         public native Observable<T> concat(Observable<T> other);
 
         public native Observable<T> concat(Observable<T>... others);
+        
+        public native Observable<T> count(Function1<T, Boolean> condition);
+
+        public native Observable<Integer> count();
 
         public native Disposable subscribe(Callback1<T> onNext);
 
