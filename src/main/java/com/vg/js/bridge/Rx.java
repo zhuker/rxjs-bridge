@@ -82,6 +82,9 @@ public class Rx {
         @SafeVarargs
         public native static <T> Observable<T> merge(Observable<? extends T>... observables);
 
+        @Template("prefix")
+        public native static <T> Observable<T> $merge(Array<Observable<T>> observables);
+
         public native static <T> Observable<T> concat(Array<Observable<T>> map);
 
         public native static <T> Observable<T> create(Callback1<Observer<T>> observer);
