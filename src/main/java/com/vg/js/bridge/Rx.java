@@ -117,6 +117,8 @@ public class Rx {
         public native Disposable subscribe(Callback1<T> onNext, Callback1<?> onError, Callback0 onCompleted);
 
         public native Disposable subscribe(Observer<T> onbserver);
+        
+        public native Disposable subscribe(Subject<T> onbserver);
 
         public native Disposable subscribe(Observable<T> observable);
 
