@@ -274,6 +274,9 @@ public class Rx {
 
         public native Observable<T> let(Function1<Observable<T>, Observable<T>> foo);
 
+        public native static <O1, O2, R> Observable<R> combineLatest(Observable<O1> o1, Observable<O2> o2, Function2<O1, O2, R> resultSelector);
+
+        public native static <O1, O2, O3, R> Observable<R> combineLatest(Observable<O1> o1, Observable<O2> o2, Observable<O2> o3, Function3<O1, O2, O3, R> resultSelector);
     }
 
     public static class GroupedObservable<K, V> extends Observable<V> {
