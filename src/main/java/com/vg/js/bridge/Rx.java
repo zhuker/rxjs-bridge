@@ -250,6 +250,8 @@ public class Rx {
 
         public native Observable<T> skipWhile(Function1<T, Boolean> predicate);
 
+        public native Observable<T> skipUntil(Observable<T> other);
+
         public native <K> Observable<GroupedObservable<K, T>> groupBy(Function1<T, K> keySelector);
 
         public native Disposable subscribe();
