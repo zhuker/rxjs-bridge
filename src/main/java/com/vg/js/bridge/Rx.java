@@ -166,6 +166,9 @@ public class Rx {
         @Template("prefix")
         public native Observable<T> $catch(Observable<T> second);
 
+        @Template("prefix")
+        public native Observable<T> $catch(Function1<?, Observable<T>> handler);
+
         public native Observable<T> repeat();
 
         public native Observable<T> repeat(int count);
