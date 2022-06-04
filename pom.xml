@@ -11,14 +11,6 @@
 	</properties>
 
 	<repositories>
-		<repository>
-			<id>vg-corporate-repo</id>
-			<url>http://kote.videogorillas.com/m2repo/</url>
-		</repository>
-		<repository>
-			<id>vg-google-drive</id>
-			<url>file://${user.home}/Google Drive/Dropbox/m2/repository</url>
-		</repository>
 	</repositories>
 
 	<build>
@@ -117,7 +109,7 @@
 		<dependency>
 			<groupId>org.st-js.bridge</groupId>
 			<artifactId>html</artifactId>
-			<version>5.0.bv21-59</version>
+			<version>5.0.bv47</version>
 		</dependency>
 	</dependencies>
 </project>
